@@ -1,0 +1,33 @@
+.numPokemon {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+button.buttonRoute{
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+button.buttonRoute{
+  color: #607d8b;
+}
+
+button.buttonRoute{
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+
+button.buttonRoute{
+  color: #039be5;
+}
+
+mat-card{
+  width: 400px;
+}
+
