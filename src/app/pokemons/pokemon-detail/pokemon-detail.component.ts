@@ -26,11 +26,6 @@ export class PokemonDetailComponent implements OnInit {
     this.location.back();
   }
 
-  save() {
-    this.pokemonService.updatePokemon(this.pokemon).subscribe(result => this.pokemon = result);
-    this.goBack();
-  }
-
   playAudio(input: any) {
     input.play();
   }
