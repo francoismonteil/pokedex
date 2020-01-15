@@ -18,7 +18,9 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPokemon(this.pokemonService.getPokemonId());
+    if (this.pokemonService.getPokemonId()) {
+      this.getPokemon(this.pokemonService.getPokemonId());
+    }
   }
 
   goBack() {

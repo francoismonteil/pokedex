@@ -39,12 +39,12 @@ export class PokemonService {
   }
 
   searchPokemons(term: string): Observable<PagedData<Pokemon>> {
-    // if (!term.trim()) {
-    //   // if not search term, return empty Pokemon array.
-    //   return of([]);
-    // }
-    const params = new HttpParams()
-      .set('name', term);
+    if (!term.trim()) {
+      // if not search term, return 20 Pokemons array.
+      return this.getPokemons(0, 20);
+    }
+    // const params = new HttpParams()
+    //   .set('name', term);
     return this.http.get<PagedData<Pokemon>>(this.pokemonUrl + `/pokemons?search=${term}`)
       .pipe(
       tap(_ => this.log(`found Pokemons matching "${term}"`)),
