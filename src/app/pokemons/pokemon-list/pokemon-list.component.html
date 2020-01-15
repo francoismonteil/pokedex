@@ -1,6 +1,7 @@
-<h2>Mes pokemons</h2>
-<mat-nav-list class="pokemons" infiniteScroll (scrolled)="onScroll()">
-  <mat-list-item routerLink="/detail/{{pokemon.id}}" *ngFor="let pokemon of pokemons">
+<h2 class="title">Pokemons</h2>
+<input #searhBox class="search-pokemon" (keyup)="search(searhBox.value)">
+<mat-nav-list class="pokemons" infiniteScroll (scrolled)="onScroll()" [scrollWindow]="false">
+  <mat-list-item (click)="choose(pokemon.id)" *ngFor="let pokemon of pokemons">
     <img matListAvatar src="../assets/img/sprites/{{pokemon.id}}.png">
     {{pokemon.id}}. {{pokemon.name}}
   </mat-list-item>

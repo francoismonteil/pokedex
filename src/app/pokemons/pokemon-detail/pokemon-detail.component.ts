@@ -13,13 +13,12 @@ export class PokemonDetailComponent implements OnInit {
   @Input() pokemon: Pokemon;
   constructor(private route: ActivatedRoute, private pokemonService: PokemonService, private location: Location) { }
 
-  getPokemon() {
-    const id: number = +this.route.snapshot.paramMap.get('id');
+  getPokemon(id: number) {
     this.pokemonService.getPokemon(id).subscribe(result => this.pokemon = result);
   }
 
   ngOnInit() {
-    this.getPokemon();
+    this.getPokemon(this.pokemonService.getPokemonId());
   }
 
   goBack() {

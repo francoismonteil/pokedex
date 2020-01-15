@@ -13,13 +13,21 @@ export class PokemonListComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
-    this.pokemonService.getPokemons(0, 10).subscribe(result => this.pokemons = result.data);
+    this.pokemonService.getPokemons(0, 20).subscribe(result => this.pokemons = result.data);
   }
 
   onScroll() {
-    this.pokemonService.getPokemons(this.coefScroll * 10,  10)
+    this.pokemonService.getPokemons(this.coefScroll * 20,  20)
       .subscribe(result => this.pokemons.push.apply(this.pokemons, result.data));
     this.coefScroll++;
   }
 
+  search(term: string) {
+    this.pokemonService.searchPokemons(term)
+      .subscribe(result => this.pokemons = result.data);
+  }
+
+  choose(id: number) {
+    this.pokemonService.setPokemonId(id);
+  }
 }
