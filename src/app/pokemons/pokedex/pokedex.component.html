@@ -1,0 +1,10 @@
+<mat-sidenav-container class = "tp-container">
+  <mat-sidenav mode = "side" opened fixedInViewport="true">
+    <section class="tp-section" >
+      <app-pokemon-list (click)="detail.ngOnInit()"></app-pokemon-list>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content>
+        <app-pokemon-detail #detail></app-pokemon-detail>
+  </mat-sidenav-content>
+</mat-sidenav-container>
