@@ -1,6 +1,6 @@
 ## TP Web Services
-François MONTEIL
-Branche V2 correspond au TP3 que j'ai terminé, la branche V3 au TP4 que je n'ai pas terminé.
+François MONTEIL<br>
+La Branche V2 correspond au TP3 que j'ai terminé, la branche V3 au TP4 que je n'ai pas terminé.
 
 # Pokedex
 
